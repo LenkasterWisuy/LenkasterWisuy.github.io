@@ -8,7 +8,6 @@
                 * {
                     margin: 0;
                     font-family: Arial;
-                    color: white;
                 }
                 body{
                     font-family: Arial, Helvetica, sans-serif;
@@ -70,9 +69,52 @@
                 }
            </style>
            <script>
-                function myFunction() {
-                    alert('Obrigado por se cadastrar!')
-                    window.location.pathname="index.html"
+                function funcao() {
+                    var senha = document.getElementById("senha").value
+                    var confirmar_senha = document.getElementById("confirmar_senha").value
+                    var idade = document.getElementById("idade").value
+                    var nome = document.getElementById("nome").value
+                    var email = document.getElementById("email").value
+                    var telefone = document.getElementById("telefone").value
+                    var estado = document.getElementById("estado").value
+                    var cidade = document.getElementById("cidade").value
+                    const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i
+                    var cont = 0
+                    if (nome == false) {
+                    }
+                    else cont = cont + 1
+                    if (idade == false) {
+                    }
+                    else cont = cont + 1
+                    if (email == false) {
+                    }
+                    else cont = cont + 1
+                    if (telefone == false) {
+                    }
+                    else cont = cont + 1
+                    if (estado == false) {
+                    }
+                    else cont = cont + 1
+                    if (cidade == false) {
+                    }
+                    else cont = cont + 1
+                    if (senha == false) {
+                    }
+                    else cont = cont + 1
+                    if (confirmar_senha == false) {
+                    }
+                    else cont = cont + 1
+                    if (senha != confirmar_senha || senha == false || confirmar_senha == false) {
+                        alert("As senhas não são iguais!")
+                    }
+                    else cont = cont + 1
+                    if (cont < 9) {
+                        alert("Preencha todos os campos corretamente!")
+                    }
+                    if (cont === 9) {
+                        alert('Obrigado por se cadastrar!')
+                        window.location.href="index.html"
+                    }
                 }
            </script>
     </head>
@@ -84,7 +126,7 @@
             </a>
         </header>
         <div class="box">
-            <form action="" name="form1">
+            <form action="" name="form1" target="index.html">
                 <fieldset>
                     <legend> Faça Parte Do #SaveGreen </legend>
                     <br>
@@ -99,36 +141,36 @@
                     </div>
                     <br><br>
                     <div class="inputBox">
-                        <input type="email" name="email" id="email" class="inputUser" placeholder="exemplo@exemplo.com\">
+                        <input type="email" name="email" id="email" class="inputUser" placeholder="exemplo@exemplo.com">
                         <label for="email">Email</label>
                     </div>
                     <br><br>
                     <div class="inputBox">
-                        <input type="tel" name="telefone" id="telefone" class="inputUser" pattern="[0-9]{2} [0-9]{5}[0-9]{4}" placeholder="12 123456789" >
+                        <input type="tel" name="telefone" id="telefone" class="inputUser" pattern="[0-9]{2} [0-9]{5}[0-9]{4}" placeholder="12 123456789">
                         <label for="telefone">Tel</label>
                     </div>
                     <br><br>
                     <div class="inputBox">
-                        <input type="text" name="estado" id="estado" class="inputUser" >
+                        <input type="text" name="estado" id="estado" class="inputUser">
                         <label for="estado">Estado</label>
                     </div>
                     <br><br>
                     <div class="inputBox">
-                        <input type="text" name="cidade" id="cidade" class="inputUser" >
+                        <input type="text" name="cidade" id="cidade" class="inputUser">
                         <label for="cidade">Cidade</label>
                     </div>
                     <br><br>
                     <div class="inputBox">
-                        <input type="password" name="senha" id="senha" class="inputUser" >
+                        <input type="password" name="senha" id="senha" class="inputUser">
                         <label for="senha">Senha</label>
                     </div>
                     <br><br>
                     <div class="inputBox">
-                        <input type="password" name="confirmar_senha" id="senha" class="inputUser" >
+                        <input type="password" name="confirmar_senha" id="confirmar_senha" class="inputUser">
                         <label for="senha">Confirmar senha</label>
                     </div>
                     <br><br>
-                    <input type="submit" value="Create" onclick="myFunction()"/>
+                    <input type="button" value="Enviar" onclick="funcao()"/>
                 </fieldset>
             </form>
         </div>
